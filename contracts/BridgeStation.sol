@@ -96,7 +96,7 @@ contract BridgeStation {
         nonce++;
     }
 
-    function mintRequest(BridgeStruct memory bridgeStruct) public {
+    function mintRequest(BridgeStruct memory bridgeStruct) public onlyAdmin {
         require(
             IERC20(bridgeStruct.tokenToAddress).mint(
                 bridgeStruct.toAddress,
